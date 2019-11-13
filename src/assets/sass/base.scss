@@ -1,0 +1,167 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+strong,
+sub,
+sup,
+ol,
+ul,
+li,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+footer,
+header,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+img {
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+ol,
+ul {
+    list-style: none;
+}
+body{
+    background-color:#f5f5f5;
+}
+%fl{
+    float:left;
+}
+%fr{
+    float:right;
+}
+%oh{
+    overflow:hidden;
+}
+
+%flex {
+    display: flex;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+%flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+%flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+%flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%pf {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+%clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+%clearfix {
+    zoom: 1;
+}
+
+
+
+
+
+
+$baseColor:#ffd033;
+
+@function toRem($px) {
+    @return $px / 75 * 1rem;
+}
+
+@mixin wh($width, $height) {
+    width: toRem($width);
+    height: toRem($height);
+}
+
+@mixin fsColor($size:30, $color:#4e4e4e) {
+    font-size: toRem($size);
+    color: $color;
+}
+
+@mixin ps-tl($position, $top:0, $left:0) {
+    position: $position;
+    top: toRem($top);
+    left: toRem($left);
+}
+
+@mixin ps-tr($position, $top:0, $right:0) {
+    position: $position;
+    top: toRem($top);
+    right: toRem($right);
+}
+
+@mixin hang-more($num) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+    overflow: hidden;
+}
+
+%hang1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin opacity($num) {
+    $num100: $num*100;
+    filter: alpha(opacity=$num100);
+    -moz-opacity: $num;
+    -khtml-opacity: $num;
+    opacity: $num;
+}
+%box-sz-20{
+    box-sizing:border-box;
+    padding:toRem(20);
+}
